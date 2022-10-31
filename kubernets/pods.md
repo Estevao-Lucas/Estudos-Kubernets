@@ -23,3 +23,21 @@
 ##### Editando um Pod
 * Para editar um Pod, ou seja, caso queira atualizar ou remover algo utilize o comando ```kubectl edit <Nome do Pod>```
 * Usando o comando anterior, ele irá abrir um bloco de notas para que você consiga alterar.
+***
+### Criando um Pod de maneira declarativa
+***
+* A criação de um Pod de maneira declarativa pode ocorrer de duas maneira, ou por um arquivo do tipo JSON ou por um arquivo do tipo Yaml.
+* Dentro dele precisamos especificar a versão da API com a tag ```apiVersion: <versão>```, geralmente usa-se a versão estável.
+* Precisamos especificar também o tipo com a tag ```kind: Pod```, ele pode ou ter um metadata como o name, sendo especificado com a tag ```metadata: ```, além disso ele precisa especificar as imagens e os nomes dos containers, caso exista mais de um. 
+***
+#### Exemplo de um arquivo yaml:
+![Passo a Passo](imgs/primeiro_pod.png)
+* Utilize o comando ```minikube start``` antes para a criação da VM caso não tenha feito.
+* Após a criação do arquivo yaml, utilize o comando ```kubectl apply -f <arquivo.yaml>```
+* Caso tudo ocorra certo aparecerá uma mensagem no console informando que o pod/arquivo foi criado
+##### Algo semelhante a isso:
+![Passo a Passo](imgs/mensagem.png)
+* Utilize o comando ```kubectl get pods``` para verificar o estado do Pod
+
+
+
