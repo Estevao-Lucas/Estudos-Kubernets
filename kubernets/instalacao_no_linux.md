@@ -19,7 +19,7 @@
 * Verificar os nodes ```kubectl get nodes```
 ***
 * Passo a Passo mais detalhado
-![Passo a Passo](passos.png)
+![Passo a Passo](imgs/passos.png)
 ## :cloud: Inicialização no GCP (Bônus)
 ### :dollar: Podem ser cobrados pelo uso
 * Crie um projeto dentro do Google Cloud Plataform e escolha um recurso no caso **Kubernets Engine**.
