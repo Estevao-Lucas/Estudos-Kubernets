@@ -37,7 +37,8 @@
 * Caso tudo ocorra certo aparecerá uma mensagem no console informando que o pod/arquivo foi criado
 ##### Algo semelhante a isso:
 ![Passo a Passo](imgs/mensagem.png)
-* Utilize o comando ```kubectl get pods``` para verificar o estado do Pod
+* Utilize o comando ```kubectl get pods``` para verificar o estado do Pod.
+* Utilize o comando ```kubectl delete pod <nome do pod>``` para deletar de maneira imperativa. Para deletar de maneira declarativa utilize o comando ```kubectl delete -f <arquivo.yaml>```.
 
 
 
