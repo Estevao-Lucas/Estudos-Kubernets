@@ -23,7 +23,7 @@
 ![Exemplo Pod](imgs/pod-2.png)  ![Exemplo SVC](imgs/svc.png)
 ***
 ### NodePort
-* Tipp de serviço que permite a comunicação com o mundo externo, comunicação com máquinas de fora do cluster.
+* Tipo de serviço que permite a comunicação com o mundo externo, comunicação com máquinas de fora do cluster.
 * Também funciona como um ClusterIP, realizando a comunicação dentro do cluster.
 * É possivel definir uma porta externa atráves da tag ```nodePort: ```, **As portas devem estar no intervalo entre 30000-32767**
 ##### Exemplos de pod e svc
