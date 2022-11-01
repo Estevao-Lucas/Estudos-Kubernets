@@ -12,9 +12,9 @@
 * Dentro do arquivo .yaml é necessário especificar o type, o kind, o selector, que deve ser qual pod ele atuará de acordo com a label passada e a porta que ele irá ouvir e a porta que ele ira despachar com a tag ```targetPort```.
 
 ##### Os services possuem 3 tipos:
-* O ClusterIP
-* NodePort
-* LoadBalancer
+###### O ClusterIP
+###### NodePort
+###### LoadBalancer
 ***
 ### ClusterIP
 * O service ClusterIP serve para fazer a comunicação entre diferentes pods dentro de um mesmo cluster.
