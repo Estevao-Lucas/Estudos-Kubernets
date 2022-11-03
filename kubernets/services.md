@@ -33,3 +33,6 @@
 * O load balancer é um tipo de ClusterIP que permite a comunicação entre uma máquina do mundo externo e os nossos pods, só que automaticamente se integra ao load balancer do cloud provider.
 ###### Exemplo de LoadBalancer:
 ![Exemplo Pod](imgs/pod1.png)  ![Exemplo SVC](imgs/loadbalancer.png)
+
+##### OBS:
+* Para acessar a aplicação externa ( No Linux ) é necessário fazer o mapeamento das portas de acordo com o minikube, então para pegar o endereço IP do minikube utilize o comando: ```kubectl get nodes -o wide``` e utilize o **INTERNAL-IP**
