@@ -29,3 +29,7 @@
 ##### Exemplos de pod e svc
 ![Exemplo Pod](imgs/pod1.png)  ![Exemplo SVC](imgs/svc1.png)
 ***
+### LoadBalancer
+* O load balancer é um tipo de ClusterIP que permite a comunicação entre uma máquina do mundo externo e os nossos pods, só que automaticamente se integra ao load balancer do cloud provider.
+###### Exemplo de LoadBalancer:
+![Exemplo Pod](imgs/pod1.png)  ![Exemplo SVC](imgs/loadbalancer.png)
