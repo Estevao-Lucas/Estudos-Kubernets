@@ -50,3 +50,71 @@ spec:
         path: /<Caminho>
         type: DirectoryOrCreate 
 ```
+***
+### PersistentVolume
+***
+* Um PersistentVolume (PV) é uma parte do armazenamento no cluster que foi provisionado por um administrador ou provisionado dinamicamente usando Storage Classes. 
+* É um recurso no cluster, assim como um nó é um recurso de cluster. 
+* PVs são plug-ins de volume como Volumes, mas têm um ciclo de vida independente de qualquer Pod individual que usa o PV. Esse objeto API captura os detalhes da implementação do armazenamento, seja NFS, iSCSI ou um sistema de armazenamento específico do provedor de nuvem.
+* É feito a montagem de um disco ou partição que estará disponível em qualquer cenário dentro do cluster.
+* Um PersistentVolume monta um disco ou uma partição dentro de um Pod, de maneira independente do node.
+* Um PV é um recurso no cluster que está disponível para ser vinculado a um PVC.
+* É possível acessar somente pelo PVC.
+* EX em um google cloud plataform:
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-1
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes: 
+    - ReadWriteOnce
+  gcePersistentDisk: 
+    pdName: pv-disk
+  storageClassName: standard
+```
+***
+### PersistentVolumeClaim
+***
+* Um PersistentVolumeClaim (PVC) é uma solicitação de armazenamento por um usuário. 
+* É semelhante a um pod. Os pods consomem recursos de nó e os PVCs consomem recursos de PV. 
+* Os pods podem solicitar níveis específicos de recursos (CPU e memória). 
+* As declarações podem solicitar tamanhos e modos de acesso específicos (por exemplo, eles podem ser montados como ReadWriteOnce, ReadOnlyMany ou ReadWriteMany, consulte AccessModes ).
+* Os PVCs precisam estar vinculados a um PersistentVolume (PV) para serem usados, para isso é necessário ter a mesma paridade de recursos e modos de acesso.
+* Ex em um google cloud plataform:
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-1
+spec:
+  accessModes: 
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: standard
+```
+* Pod com PVC:
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-pv
+  labels:
+    name: pod-pv
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:latest
+    volumeMounts:
+      - mountPath: /volume-dentro-do-container
+        name: primeiro-pv
+  volumes:
+    - name: primeiro-pv
+      persistentVolumeClaim:
+        claimName: pvc-1
+```
