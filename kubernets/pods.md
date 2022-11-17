@@ -45,14 +45,18 @@
 * EX: ```kubectl exect -it db-noticias -- bash ```
 * Para declarar variáveis de ambiente dentro de um container como por exemplo Passwords, Nome do banco de dados e outros utilize a flag ```env:``` dentro do arquivo .yaml
 * Ex:
+
 ![Declaracao de variavel env](imgs/env.png)
 * É possível também cirar um configmap para tratar essas variáveis de ambiente 
 * Basta criar um arquivo.yaml e definir o tipo dele, bem como o data:
+
 ![ConfigMap](imgs/configmap.png)
 * Feito isso é necessário mudar o env dentro do arquivo de pod, colocando o valueFrom ou envFrom, o configMapKeyRef e dentro desse o "name" e a "key".
 * Ex com valueFrom:
+
 ![ValueFrom](imgs/valueFrom.png)
 * Ex com envFrom:
+
 ![envFrom](imgs/envFrom.png)
 
 
