@@ -13,4 +13,5 @@
 * Ajuda no controle de atualização para os Pods e ainda tem os beneficios do replicaset
 * É recomendado utilizar o deployment ao invés do replicaset como uma boa pratica.
 * EX:
+
 ![Deployment](imgs/deployment.png)
